@@ -27,24 +27,31 @@ function SingleMoviePage() {
     }
 
     return (
-        <>
-            <div>
-                <h2>{movie.id}</h2>
-                <img src={movie.image} />
-            </div>
+        <div>
+            <div className="container">
 
-            <section>
-                {movie?.reviews?.map((review) => {
-                    return (
-                        <div key={review.id} className='reviewCard'>
-                            <span>{review.name}</span>
-                            <span>{formatDate(review.created_at)}</span>
-                            <h3>{(review?.vote).toFixed(1)}</h3>
-                        </div>
-                    )
-                })}
-            </section>
-        </>
+                <section className="infoContainer">
+                    <h1>{movie.title}</h1>
+                    <p className='abstract'>{movie.abstract}</p>
+                    <p className='director'>Director: {movie.director}</p>
+
+                    <img src={movie.image} />
+                </section>
+
+                <section>
+                    {movie?.reviews?.map((review) => {
+                        return (
+                            <div key={review.id} className='reviewCard'>
+                                <span>{review.name}</span>
+                                <span>{formatDate(review.created_at)}</span>
+                                <h3>{(review?.vote).toFixed(1)}</h3>
+                            </div>
+                        )
+                    })}
+                </section>
+
+            </div>
+        </div>
     )
 }
 

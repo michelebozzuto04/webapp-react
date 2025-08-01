@@ -36,12 +36,14 @@ function Header() {
                         })}
                     </ul>
 
-                    <form className='searchBox'>
-                        <input placeholder='Search...' />
-                        <button type='submit'>
-                            <IoSearchOutline size={22} color='rgba(255, 255, 255, 0.5)' />
-                        </button>
-                    </form>
+                    <div className='actions'>
+                        <form className='searchBox'>
+                            <input placeholder='Search...' />
+                            <button type='submit'>
+                                <IoSearchOutline size={22} color='rgba(255, 255, 255, 0.5)' />
+                            </button>
+                        </form>
+                    </div>
                 </nav>
             </div>
         </header>

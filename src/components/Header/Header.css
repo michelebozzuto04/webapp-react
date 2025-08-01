@@ -1,17 +1,28 @@
 header {
-    padding: 2rem 0rem;
-    background-color: transparent;
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 1.3rem 0rem;
+    background-color: #0E0E0E;
+    z-index: 1000;
 
     nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
 
         ul {
             display: flex;
+            justify-content: center;
+            align-items: center;
             gap: 20px;
             list-style: none;
 
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
     }
 }
@@ -28,6 +39,7 @@ a:active {
 .searchBox {
     padding: 0.3rem 1rem;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 5px;
     width: 160px;
