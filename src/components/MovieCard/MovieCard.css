@@ -1,3 +1,14 @@
-div {
+.cardContainer {
+    height: 100%;
     color: white;
+    transition: transform .2s;
+
+    .moviePoster {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.cardContainer:hover {
+    transform: scale(105%);
 }
