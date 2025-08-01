@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import MoviesPage from './pages/MoviesPage'
-import SingleMoviePage from './pages/SingleMoviePage'
+import HomePage from './pages/HomePage/HomePage'
+import MoviesPage from './pages/MoviesPage/MoviesPage'
+import SingleMoviePage from './pages/SingleMoviePage/SingleMoviePage'
 import DefaultLayout from './layouts/DefaultLayout'
 import './index.css'
 
