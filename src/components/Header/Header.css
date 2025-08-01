@@ -1,0 +1,53 @@
+header {
+    padding: 2rem 0rem;
+    background-color: transparent;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+a:active {
+    color: white;
+}
+
+.searchBox {
+    padding: 0.3rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 160px;
+    background-color: rgba(255, 255, 255, 0.15);
+
+    input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        color: white;
+        outline: none;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+    }
+}
