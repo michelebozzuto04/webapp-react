@@ -19,7 +19,7 @@ function MoviesPage() {
                 <div className="movieList">
                     {movies.map((movie) => {
                         return (
-                            <MovieCard movie={movie} />
+                            <MovieCard key={movie.id} movie={movie} />
                         )
                     })}
                 </div>

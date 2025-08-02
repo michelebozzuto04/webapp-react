@@ -3,7 +3,8 @@ header {
     top: 0;
     left: 0;
     padding: 1.3rem 0rem;
-    background-color: #0E0E0E;
+    background-color: #0e0e0ecd;
+    backdrop-filter: blur(10px);
     z-index: 1000;
 
     nav {
@@ -42,7 +43,7 @@ a:active {
     justify-content: flex-end;
     align-items: center;
     gap: 5px;
-    width: 160px;
+    width: 200px;
     background-color: rgba(255, 255, 255, 0.15);
 
     input {
