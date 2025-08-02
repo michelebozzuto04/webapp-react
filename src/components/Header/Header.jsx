@@ -30,7 +30,7 @@ function Header() {
                         {menu.map((menuItem) => {
                             return (
                                 <li key={menuItem.id}>
-                                    <NavLink to={menuItem.path}>{menuItem.title}</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? "navActive" : "nav"} to={menuItem.path}>{menuItem.title}</NavLink>
                                 </li>
                             )
                         })}

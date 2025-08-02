@@ -28,12 +28,13 @@ header {
     }
 }
 
-a {
+.nav {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.5);
 }
 
-a:active {
+.navActive {
+    text-decoration: none;
     color: white;
 }
 
