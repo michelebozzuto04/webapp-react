@@ -1,0 +1,21 @@
+.headerContainer {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    .menuList {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+
+        a {
+            color: rgba(0, 0, 0, 0.5);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        a:active {
+            color: rgba(0, 0, 0);
+        }
+    }
+}

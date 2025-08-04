@@ -1,8 +1,11 @@
+import MovieList from '../../components/MovieList/MovieList'
 import './MoviesPage.css'
 
 function MoviesPage() {
     return (
-        <div>MoviesPage</div>
+        <>
+            <MovieList />
+        </>
     )
 }
 
