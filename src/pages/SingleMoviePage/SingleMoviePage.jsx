@@ -41,6 +41,40 @@ function SingleMoviePage() {
                     })}
                 </section>
 
+                <section className='reviewFormSection'>
+                    <h2>Write Review</h2>
+                    <form className='reviewForm' onSubmit={(values) => console.log(values)}>
+                        <input
+                            name='vote'
+                            type='number'
+                            placeholder='Type your vote (1-5)'
+                            className='textInput'
+                            max={5}
+                            min={1}
+                        />
+
+                        <input
+                            name='name'
+                            type='text'
+                            placeholder='Type your name'
+                            className='textInput'
+                        />
+
+                        <textarea
+                            name='content'
+                            type='text'
+                            placeholder='Write review content'
+                            className='textInput'
+                            rows={4}
+                        />
+
+                        <div className="btnContainer">
+                            <button className='btn btnFill' type='submit'>Submit</button>
+                            <button className='btn btnOutline' type='reset'>Cancel</button>
+                        </div>
+                    </form>
+                </section>
+
             </div>
         </div>
     )

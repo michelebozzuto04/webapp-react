@@ -1,3 +1,7 @@
+.container {
+    position: relative;
+}
+
 .detailsContainer {
     padding: 3rem 0rem;
     color: white;
@@ -53,5 +57,71 @@
     h2 {
         font-size: 30px;
         margin-bottom: 30px;
+    }
+}
+
+.reviewFormSection {
+    margin-top: 4rem;
+    padding: 3rem 4rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    .reviewForm {
+        margin: 1rem 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        .textInput {
+            width: 100%;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+            font-size: 16px;
+            outline: none;
+            color: white;
+        }
+
+        .textInput:focus {
+            background-color: rgba(255, 255, 255, 0.175);
+        }
+
+        .btnContainer {
+            align-self: start;
+            display: flex;
+            gap: 20px;
+
+            .btn {
+                padding: 1rem 4rem;
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .btnFill {
+                background-color: #EE4A6D;
+                border: 2px solid #EE4A6D;
+                color: white;
+            }
+
+            .btnFill:hover {
+                cursor: pointer;
+                background-color: #ee4a6ecf;
+                border: 2px solid #ee4a6ecf;
+            }
+
+            .btnOutline {
+                background-color: transparent;
+                border: 1px solid #ffffff;
+                color: white;
+            }
+
+            .btnOutline:hover {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+        }
     }
 }
