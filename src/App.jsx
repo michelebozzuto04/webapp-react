@@ -4,19 +4,22 @@ import MoviesPage from './pages/MoviesPage/MoviesPage'
 import SingleMoviePage from './pages/SingleMoviePage/SingleMoviePage'
 import DefaultLayout from './layouts/DefaultLayout'
 import './index.css'
+import { GlobalProvider } from './contexts/GlobalContext'
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<DefaultLayout />}>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/movies' element={<MoviesPage />} />
-          <Route path='/movies/:id' element={<SingleMoviePage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <GlobalProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout />}>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/movies' element={<MoviesPage />} />
+            <Route path='/movies/:id' element={<SingleMoviePage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </GlobalProvider>
   )
 }
 
