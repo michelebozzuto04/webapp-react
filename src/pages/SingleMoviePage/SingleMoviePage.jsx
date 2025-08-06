@@ -8,12 +8,47 @@ function SingleMoviePage() {
     const { id } = useParams();
     const singlemovie_api_url = `http://localhost:3000/api/movies/${id}`;
     const [movie, setMovie] = useState({});
+    const [formData, setFormData] = useState({
+        vote: 0,
+        name: '',
+        text: ''
+    })
 
     useEffect(() => {
         fetch(singlemovie_api_url)
             .then(res => res.json())
             .then(data => setMovie(data))
-    }, [])
+    }, [movie.reviews, id])
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        fetch(`${singlemovie_api_url}/reviews`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+
+                if (data.error) {
+                    console.log(data.message);
+                    return
+                }
+
+                setMovie(prevState => ({ ...prevState, reviews: [...prevState.reviews, data.review] }))
+
+
+                setFormData({
+                    vote: 0,
+                    name: '',
+                    text: ''
+                })
+            })
+    }
 
     return (
         <div className='container'>
@@ -43,17 +78,22 @@ function SingleMoviePage() {
 
                 <section className='reviewFormSection'>
                     <h2>Write Review</h2>
-                    <form className='reviewForm' onSubmit={(values) => console.log(values)}>
+                    <form className='reviewForm' onSubmit={handleSubmit}>
                         <input
+                            value={formData.vote}
+                            onChange={e => setFormData({ ...formData, vote: e.target.value })}
                             name='vote'
                             type='number'
                             placeholder='Type your vote (1-5)'
                             className='textInput'
+                            step={1}
                             max={5}
                             min={1}
                         />
 
                         <input
+                            value={formData.name}
+                            onChange={e => setFormData({ ...formData, name: e.target.value })}
                             name='name'
                             type='text'
                             placeholder='Type your name'
@@ -61,7 +101,9 @@ function SingleMoviePage() {
                         />
 
                         <textarea
-                            name='content'
+                            value={formData.text}
+                            onChange={e => setFormData({ ...formData, text: e.target.value })}
+                            name='text'
                             type='text'
                             placeholder='Write review content'
                             className='textInput'

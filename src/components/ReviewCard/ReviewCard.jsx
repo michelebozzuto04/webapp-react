@@ -19,9 +19,9 @@ function ReviewCard({ review }) {
         const reviewArr = [];
         for (let i = 0; i < 5; i++) {
             if (i < vote) {
-                reviewArr.push(<IoStar size={25} color='yellow' />)
+                reviewArr.push(<IoStar key={i} size={25} color='yellow' />)
             } else {
-                reviewArr.push(<IoStarOutline size={25} color='yellow' />)
+                reviewArr.push(<IoStarOutline key={i} size={25} color='yellow' />)
             }
         }
 
@@ -31,7 +31,7 @@ function ReviewCard({ review }) {
     return (
         <div className='reviewContainer'>
             <div className="reviewBody">
-                <h3>{fetchRating((review?.vote).toFixed(1))}</h3>
+                <h3>{fetchRating((review?.vote))}</h3>
                 <p>"{review.text}"</p>
             </div>
 
